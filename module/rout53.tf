@@ -3,5 +3,5 @@ resource "aws_route53_record" "wordpress" {
   name    = "wordpress.hodantech.com"
   type    = "A"
   ttl     = "300"
-  records = ["${aws_instance.terraform-test.public_ip}"]
+  records = ["${aws_instance.test.public_ip}"]
 }

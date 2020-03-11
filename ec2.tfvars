@@ -1,0 +1,9 @@
+instance_type		=	"t2.medium"
+key_name		=	"terraform"
+ami             = "ami-0a887e401f7654935"
+vpc_id			=	"vpc-1471ad6e"
+user			=	"centos"
+ssh_key_location	= "${file(~/.ssh/id_rsa.pub)}"       #Import pub key pair to aws as "terraform"
+zone_id			=	"Z1UZR3RR3CRQJJ"	   #Add hosted DNS zone ID here
+domain			=	"hodantech.com"
+region = "us-east-1"
