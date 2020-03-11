@@ -4,7 +4,7 @@ resource "aws_subnet" "dev1" {
 
   vpc_id = "${aws_vpc.dev.id}" 
 
-  cidr_block = "${var.cidr_block}" 
+  cidr_block = "${var.cidr_block1_public}" 
 
 #   tags { 
 
