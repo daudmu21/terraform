@@ -1,27 +1,19 @@
-# output "Key" {
-#   value = "${module.wordpress.Key}"
-# }
-
-output "instance_test_ip" {
-  value       = "${module.wordpress.instance_test_ip}"
-  description = "The private IP address of the main terraform-test instance."
+output "IP" {
+  value = "${module.wordpress.IP}"
 }
 
-
-output "s3_bucket" {
-  value       = "${module.bucket.s3_bucket}"
+output "KEY" {
+  value = "${module.wordpress.KEY}"
 }
-
-
-# output "vpc" {
-#   value = "${module.vpc_id.vpc}"
-# }
-
-output "name" {
-  value       = "${module.wordpress.name}"
+output "AMI" {
+  value = "${module.wordpress.AMI}"
 }
-
-output "domain" {
-  value       = "${module.wordpress.domain}"
-  description = ""
+output "SEC_GROUP" {
+  value = "${module.wordpress.SEC_GROUP}"
+}
+output "ROUTE53" {
+  value = "${module.wordpress.ROUTE53}"
+}
+output "Bucketname" {
+  value = "${module.wordpress.Bucketname}"
 }

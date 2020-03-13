@@ -1,27 +1,27 @@
-# output "Key" {
-#   value = "${aws_instance.test.Key}"
-# }
 
-output "instance_test_ip" {
-  value       = "${aws_instance.test.public_ip}"
-  description = "The private IP address of the main test instance."
+output "IP" {
+  value = "${aws_instance.test.public_ip}"
 }
 
+output "KEY" {
+  value  = "${aws_instance.test.key_name}"
 
-output "s3_bucket" {
-  value       = "${aws_s3_bucket.test.s3_bucket}"
-  description = ""
 }
 
-output "name" {
-  value       = "${aws_security_group.allow_tls.name}"
-  description = ""
+output "Bucketname" {
+  value  = "${aws_s3_bucket.test.bucket}"
+
 }
 
-output "domain" {
-  value = " http://${aws_route53_record.wordpress.domain}"
+output "SEC_GROUP" {
+  value  = "${aws_security_group.allow_tls.name}"
+
 }
 
-# output "vpc" {
-#   value = "${aws_vpc.vpc_id.vpc}"
-# }
+output "AMI" {
+  value = "${aws_instance.test.ami}"
+}
+
+output "ROUTE53" {
+  value = "${aws_route53_record.wordpress.name}"
+}
