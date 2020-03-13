@@ -54,15 +54,31 @@ resource "aws_instance" "web" {
 
 
   # Copies the file as the root user using SSH
-provisioner "file" {
-  connection {
+# provisioner "file" {
+#   connection {
+#     type     = "ssh"
+#     user     = "ubuntu"
+#     private_key = "${file("~/.ssh/id_rsa")}"
+#     host     = "${self.public_ip}"
+#      }
+#   source      = "test"
+#   destination = "/tmp/test"
+#   }
+
+  provisioner "remote-exec"{
+    connection {
     type     = "ssh"
     user     = "ubuntu"
     private_key = "${file("~/.ssh/id_rsa")}"
     host     = "${self.public_ip}"
      }
-  source      = "test"
-  destination = "/tmp/test"
+      inline = [
+          "sudo apt-get install telnet -y",
+          "sudo mkdir /tmp/ubuntu",
+          "w",
+          "free -m",
+          "sleep 5"
+          ]
   }
 
   tags = {
